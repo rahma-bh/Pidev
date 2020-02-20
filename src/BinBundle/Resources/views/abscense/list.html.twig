@@ -1,0 +1,51 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+<div class="container">
+
+    <center><h3> </h3></center>
+<br/><br/><br/><br/><br/>
+    <center><table class="table table-striped"  >
+            <thead>
+            <th>id</th>
+            <th>pupl</th>
+            <th>groupe</th>
+            <th>nbr</th>
+            <th>date</th>
+            <th>subject</th>
+            <th></th>
+            </thead>
+            <tbody>
+            {% for a in abscense %}
+                <tr>
+                    <td>{{ a.id }}</td>
+                    <td>{{ a.pupl }}</td>
+                    <td>{{ a.groupe }}</td>
+                    <td>{{ a.nbr }}</td>
+                    <td>{{ a.date|date() }}</td>
+                    <td>{{ a.subject}}</td>
+                    <td><a style=" background-color: #6dc8c4;color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;" href="{{ path('deleteabs',{"id":a.id}) }}">delete</a>
+
+                        <a style=" background-color: #8B0000;color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;" href="{{ path('updateabs',{"id":a.id}) }}">update</a></td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table></center>
+
+
+
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+binaddabs:
+    path: /addabscense
+    defaults: { _controller: BinBundle:abscense:add }
+
+listabsences:
+    path: /listabscense
+    defaults: { _controller: BinBundle:abscense:list }
+
+deleteabs:
+    path: /deleteabscense/{id}
+    defaults: { _controller: BinBundle:abscense:delete }
+
+updateabs:
+
+    path: /updateabscense/{id}
+    defaults: { _controller: BinBundle:abscense:update }
+
+binaddot:
+  path: /addnotification
+  defaults: { _controller: BinBundle:notification:add }
+
+listnot:
+      path: /listnotification
+      defaults: { _controller: BinBundle:notification:list }
+deletenot:
+      path: /deletenotification/{id}
+      defaults: { _controller: BinBundle:notification:delete }
+
+updatenot:
+    path: /updatenotification/{id}
+    defaults: { _controller: BinBundle:notification:update }
+home:
+  path: /home
+  defaults: { _controller: BinBundle:Default:home }
+
+searchabscenses:
+  path: /searchabscense
+  defaults: { _controller: BinBundle:abscense:search }
+
+traitnot:
+  path: /tratenotification/{id}
+  defaults: { _controller: BinBundle:notification:treat }
+

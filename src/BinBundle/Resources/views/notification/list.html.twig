@@ -1,0 +1,52 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+
+    <br/><br/><br/><br/>
+<center><h3>List of notifications </h3></center>
+<table class="table table-striped" >
+
+        <thead>
+            <th>category</th>
+            <th>sender</th>
+            <th>receiver</th>
+            <th>content</th>
+            <th>state</th>
+            <th></th>
+        </thead>
+        <tbody>
+        {% for n in notifications %}
+            <tr>
+                <td>{{ n.category }}</td>
+                <td>{{ n.sender }}</td>
+                <td>{{ n.receiver }}</td>
+                <td>{{ n.content}}</td>
+                <td>
+                    {% if n.state == true %}
+                        treaty
+                    {% else %}
+                        In progress<br>
+                    {% endif %}</td>
+                <td><a style=" background-color: #8B0000;color: white;
+                    padding: 5px 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;" href="{{ path('deletenot',{"id":n.id}) }}">delete</a></td>
+                <td><a style=" background-color: #6dc8c4;color: white;
+                    padding: 5px 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;" href="{{ path('updatenot',{"id":n.id}) }}">update</a></td>
+                <td><a style=" background-color: #6dc8c4;color: white;
+                    padding: 5px 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;" href="{{ path('traitnot',{"id":n.id}) }}">treat</a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+</table>
+{% endblock %}
+
+
+
